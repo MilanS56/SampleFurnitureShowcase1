@@ -1,3 +1,5 @@
+/* ================= GLOBAL ================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +14,12 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #f7f4ef;
     color: #333;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header {
 
@@ -25,35 +28,41 @@ header {
 
     background: white;
 
-    width: 100%;
-
-    z-index: 100;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 20px 5%;
+    padding: 18px 5%;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    z-index: 1000;
 
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
     letter-spacing: 2px;
 }
 
 .nav a {
+
     margin-left: 30px;
     text-decoration: none;
     color: #555;
     font-weight: 500;
+
+    transition: .3s;
+
+}
+
+.nav a:hover {
+    color: #000;
 }
 
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
 
@@ -66,9 +75,10 @@ header {
     text-align: center;
 
     background:
-        linear-gradient(rgba(0, 0, 0, .3),
-            rgba(0, 0, 0, .3)),
-        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80");
+        linear-gradient(rgba(0, 0, 0, .35),
+            rgba(0, 0, 0, .35)),
+
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c");
 
     background-size: cover;
     background-position: center;
@@ -86,20 +96,30 @@ header {
     max-width: 600px;
     margin: auto;
     margin-bottom: 30px;
+    font-size: 18px;
 }
 
 .hero-btn {
 
     background: #8a7a65;
     color: white;
-    padding: 12px 28px;
+
+    padding: 14px 32px;
+
     border-radius: 8px;
+
     text-decoration: none;
+
+    transition: .3s;
 
 }
 
+.hero-btn:hover {
+    background: #6e6253;
+}
 
-/* PRODUCTS */
+
+/* ================= PRODUCTS ================= */
 
 .products {
 
@@ -115,8 +135,10 @@ header {
 .section-title {
 
     text-align: center;
+
     font-size: 36px;
-    margin-bottom: 50px;
+
+    margin-bottom: 60px;
 
 }
 
@@ -130,15 +152,22 @@ header {
 
 }
 
+
+/* ================= CARD ================= */
+
 .card {
 
     background: white;
+
     border-radius: 18px;
+
     overflow: hidden;
 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 
-    transition: all .4s ease;
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
 
     cursor: pointer;
 
@@ -152,9 +181,12 @@ header {
 
 }
 
+
+/* IMAGE */
+
 .image-wrapper {
 
-    height: 250px;
+    height: 260px;
     overflow: hidden;
 
 }
@@ -173,25 +205,43 @@ header {
     transform: scale(1.08);
 }
 
+
+/* CARD CONTENT */
+
 .card-content {
     padding: 25px;
 }
 
 .category {
+
     font-size: 12px;
+
     letter-spacing: 2px;
+
+    text-transform: uppercase;
+
     color: #9a8c7d;
+
+    font-weight: 600;
+
 }
 
 .title {
+
     font-size: 24px;
+
     margin: 10px 0;
+
 }
 
 .description {
+
     font-size: 14px;
+
     color: #666;
-    margin-bottom: 18px;
+
+    margin-bottom: 20px;
+
 }
 
 .card-btn {
@@ -204,14 +254,20 @@ header {
 
     color: white;
 
-    border-radius: 8px;
+    border-radius: 6px;
 
     cursor: pointer;
 
+    transition: .3s;
+
+}
+
+.card-btn:hover {
+    background: #6f6252;
 }
 
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about {
 
@@ -225,6 +281,7 @@ header {
 
     width: 1200px;
     max-width: 90%;
+
     margin: auto;
 
     display: grid;
@@ -240,6 +297,7 @@ header {
 .about-text h2 {
 
     font-size: 36px;
+
     margin-bottom: 20px;
 
 }
@@ -247,21 +305,150 @@ header {
 .about-text p {
 
     margin-bottom: 20px;
+
     color: #666;
+
+    font-size: 15px;
 
 }
 
 .about-image img {
 
     width: 100%;
-    border-radius: 20px;
+
+    border-radius: 18px;
 
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 
 }
 
 
-/* MODAL */
+/* ================= CONTACT ================= */
+
+.contact {
+
+    padding: 120px 0;
+
+    background: #f1ede7;
+
+}
+
+.contact-container {
+
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    margin-bottom: 60px;
+
+}
+
+.contact-info h3 {
+
+    font-size: 26px;
+    margin-bottom: 20px;
+
+}
+
+.contact-info p {
+
+    margin-bottom: 14px;
+    color: #555;
+
+}
+
+.contact-form form {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-form input,
+.contact-form textarea {
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    font-family: Poppins;
+
+}
+
+.contact-form textarea {
+    min-height: 120px;
+}
+
+.contact-form button {
+
+    padding: 12px;
+
+    border: none;
+
+    background: #8a7a65;
+
+    color: white;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.contact-form button:hover {
+    background: #6e6253;
+}
+
+
+/* MAP */
+
+.map {
+
+    width: 1200px;
+    max-width: 90%;
+
+    margin: auto;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+
+    text-align: center;
+
+    padding: 40px 0;
+
+    background: #1e1e1e;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+
+/* ================= MODAL ================= */
 
 .product-modal {
 
@@ -286,7 +473,7 @@ header {
 
     transition: .4s;
 
-    z-index: 1000;
+    z-index: 2000;
 
 }
 
@@ -304,6 +491,7 @@ header {
 
     width: 100%;
     height: 350px;
+
     object-fit: cover;
 
     border-radius: 20px 20px 0 0;
@@ -337,13 +525,14 @@ header {
 }
 
 
-/* SCROLL REVEAL */
+/* ================= SCROLL ANIMATION ================= */
 
 .reveal {
 
     opacity: 0;
     transform: translateY(60px);
-    transition: 1s;
+
+    transition: all 1s ease;
 
 }
 
@@ -351,5 +540,27 @@ header {
 
     opacity: 1;
     transform: translateY(0);
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .about-container,
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
 
 }
